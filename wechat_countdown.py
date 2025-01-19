@@ -24,11 +24,9 @@ def send_template_message(access_token, touser, template_id, data):
     return response.json()
 
 def main():
-    # 计算春节的倒计时
+    # 计算春节的倒计时，春节定为2025年1月29日
     today = datetime.now() + timedelta(hours=8)  # 转换为北京时间
-    new_year = datetime(today.year, 1, 1)
-    if today > new_year:
-        new_year = datetime(today.year + 1, 1, 1)
+    new_year = datetime(2025, 1, 29)
     countdown_days = (new_year - today).days
 
     # 准备模板消息的数据
